@@ -30,11 +30,18 @@ body {
   margin: 25px;
 }
 .button:hover {
-  background-color: black;
+  background-color: rgb(123, 123, 123);
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+.button:active {
+  background-color: rgb(55, 0, 255);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transform: scale(0.95);
 }
 h1 {
   font-weight: 800;
