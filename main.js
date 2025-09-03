@@ -5,6 +5,7 @@ let clearbutton = document.querySelector("#btn-clearGrid");
 
 let buttonRainbow = document.querySelector("#btn-random");
 let buttonBlack = document.querySelector("#btn-blackColor");
+let ereaseBtn = document.querySelector("#btn-erase");
 
 function createGrid(numSquares) {
   container.innerHTML = " ";
@@ -28,11 +29,17 @@ function createGrid(numSquares) {
       });
     });
 
-    // buttonBlack.addEventListener("click",()=>{
-    //     squareDiv.addEventListener("mouseover",()=>{
-    //         squareDiv.style.backgroundColor = "black";
-    //     });
-    // });
+    ereaseBtn.addEventListener("click", () => {
+      squareDiv.addEventListener("mouseover", () => {
+        squareDiv.style.backgroundColor = "white";
+      });
+    });
+
+    buttonBlack.addEventListener("click", () => {
+      squareDiv.addEventListener("mouseover", () => {
+        squareDiv.style.backgroundColor = "black";
+      });
+    });
 
     clearbutton.addEventListener("click", () => {
       squareDiv.style.backgroundColor = "white";
@@ -41,6 +48,8 @@ function createGrid(numSquares) {
     container.appendChild(squareDiv);
   }
 }
+
+//select the size of grid
 selectSize.addEventListener("click", () => {
   let userInput = prompt("Enter the number in 0 to 100");
   userInput = parseInt(userInput);
@@ -51,12 +60,15 @@ selectSize.addEventListener("click", () => {
   createGrid(userInput);
 });
 
+//Random color function
 function randomColor(params) {
+
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
 
   return `rgb(${r},${g},${b})`;
 }
-
+//passing the default value
 createGrid(16);
+
